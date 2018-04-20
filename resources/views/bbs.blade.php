@@ -26,32 +26,16 @@
                 <!-- ここまで -->
             </form>
             <hr>
-            <!-- 投稿内容(サンプル1つめ)ここから -->
+            <!-- 投稿内容ここから -->
+            @foreach($articles as $title => $content)
             <div class="row">
-                <label>タイトル:<b>サンプル１</b></label>
+                <label>タイトル:<b>{{$title}}</b></label>
             </div>
             <div class="row">
-                <label>
-                    本文サンプルです<br>
-                    本文サンプルです<br>
-                    本文サンプルです<br>
-                </label>            
+                <label>{{$content}}</label>            
             </div>
             <hr>
-            <!-- ここまで -->
-            
-            <!-- 投稿内容(サンプル２つめ)ここから -->
-            <div class="row">
-                <label>タイトル:<b>サンプル２</b></label>
-            </div>
-            <div class="row">
-                <label>
-                    本文サンプルです<br>
-                    本文サンプルです<br>
-                    本文サンプルです<br>
-                </label>            
-            </div>
-            <hr>
+            @endforeach
             <!-- ここまで -->
         </div>
         <!-- ここにBootstrapで使用するjavascriptファイルを記述します。 -->
