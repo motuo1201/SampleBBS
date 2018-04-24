@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 //新しい掲示板用のRoute定義
 Route::get('/bbs','BbsController@index');
+Route::post('/bbs','BbsController@postArticle');

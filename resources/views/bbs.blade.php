@@ -10,7 +10,8 @@
     <body>
         <div class="container">
             <h1>Laravel掲示板</h1>
-            <form>
+            <form method="POST" action="./bbs">
+                {{ csrf_field() }}
                 <!-- 投稿用の入力フォームはここから -->
                 <div class="form-group">
                     <label for="comment">タイトル:</label>
@@ -19,20 +20,20 @@
                 </div>
                 <div class="form-group">
                     <label for="comment">投稿内容:</label>
-                    <textarea class="form-control" rows="5" id="comment" name="content" 
+                    <textarea class="form-control" rows="5" id="comment" name="comment" 
                               placeholder="ここに投稿内容を記述して下さい。"></textarea>
                 </div>
-                <input type="button" value="投稿する" class="btn btn-primary btn-lg" name="contribute">
+                <input type="submit" value="投稿する" class="btn btn-primary btn-lg" name="contribute">
                 <!-- ここまで -->
             </form>
             <hr>
             <!-- 投稿内容ここから -->
-            @foreach($articles as $title => $content)
+            @foreach($articles as $article)
             <div class="row">
-                <label>タイトル:<b>{{$title}}</b></label>
+                <label>タイトル:<b>{{$article->title}}</b></label>
             </div>
             <div class="row">
-                <label>{{$content}}</label>            
+                <label>{!!nl2br(e($article->comment))!!}</label>            
             </div>
             <hr>
             @endforeach
