@@ -13,6 +13,7 @@
             <form method="POST" action="./bbs">
                 {{ csrf_field() }}
                 <!-- 投稿用の入力フォームはここから -->
+                @auth <!--ここを追記-->
                 <div class="form-group">
                     <label for="comment">タイトル:</label>
                     <input type="text" class="form-control" id="title" name="title" 
@@ -24,6 +25,7 @@
                               placeholder="ここに投稿内容を記述して下さい。"></textarea>
                 </div>
                 <input type="submit" value="投稿する" class="btn btn-primary btn-lg" name="contribute">
+                @endauth<!--ここを追記-->
                 <!-- ここまで -->
             </form>
             <hr>
