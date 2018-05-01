@@ -33,6 +33,7 @@
             @foreach($articles as $article)
             <div class="row">
                 <label>タイトル:<b>{{$article->title}}</b></label>
+                <label>投稿者:<b>{{$article->user->name}}</b></label>
             </div>
             <div class="row">
                 <label>{!!nl2br(e($article->comment))!!}</label>            
